@@ -9,7 +9,7 @@
             this.totalPurchases = totalPurchases;
         }
 
-        public Customer(DateTime customerDate, int totalPurchases, Person person) : base(person.BirthDate, person.TitleOfCourtesy)
+        public Customer(Person person, DateTime customerDate, int totalPurchases) : base(person.BirthDate, person.TitleOfCourtesy)
         {
             this.customerDate = customerDate;
             this.totalPurchases = totalPurchases;

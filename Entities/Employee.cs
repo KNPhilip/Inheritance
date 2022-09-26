@@ -15,6 +15,13 @@ namespace Entities
             this.employmentDate = employmentDate;
             this.yearlySalary = yearlySalary;
         }
+
+        public Employee(Person person, string jobTitle, DateTime employmentDate, decimal yearlySalary) : base(person.BirthDate, person.TitleOfCourtesy)
+        {
+            this.jobTitle = jobTitle;
+            this.employmentDate = employmentDate;
+            this.yearlySalary = yearlySalary;
+        }
         #endregion
 
         #region Fields

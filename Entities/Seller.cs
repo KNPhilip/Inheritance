@@ -12,7 +12,13 @@ namespace Entities
         public Seller(DateTime birthDate, string titleOfCourtesy, string jobTitle, DateTime employmentDate, decimal yearlySalary, string description, decimal yearlySold) : base(birthDate, titleOfCourtesy, jobTitle, employmentDate, yearlySalary)
         {
             this.description = description;
-            this.yearlySalary = yearlySalary;
+            this.yearlySold = yearlySold;
+        }
+
+        public Seller(Employee employee, string description, decimal yearlySold) : base(employee.BirthDate, employee.TitleOfCourtesy, employee.JobTitle, employee.EmploymentDate, employee.YearlySalary)
+        {
+            this.description = description;
+            this.yearlySold = yearlySold;
         }
         #endregion
 

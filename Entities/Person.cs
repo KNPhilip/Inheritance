@@ -29,7 +29,7 @@ namespace Entities
             {
                 if (value.Year < 1900)
                 {
-                    throw new ArgumentNullException("Fødselsdagen skal være efter 1900-tallet.");
+                    throw new ArgumentOutOfRangeException("Fødselsdagen skal være efter 1900-tallet.");
                 }
                 birthDate = value;
             }
