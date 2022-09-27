@@ -3,22 +3,22 @@
     public class Customer : Person
     {
         #region Constructors
-        public Customer(DateTime birthDate, string titleOfCourtesy, DateTime customerDate, int totalPurchases) : base(birthDate, titleOfCourtesy)
+        public Customer(DateTime birthDate, string titleOfCourtesy, DateTime customerDate, decimal totalPurchases) : base(birthDate, titleOfCourtesy)
         {
-            this.customerDate = customerDate;
-            this.totalPurchases = totalPurchases;
+            CustomerDate = customerDate;
+            TotalPurchases = totalPurchases;
         }
 
-        public Customer(Person person, DateTime customerDate, int totalPurchases) : base(person.BirthDate, person.TitleOfCourtesy)
+        public Customer(Person person, DateTime customerDate, decimal totalPurchases) : base(person.BirthDate, person.TitleOfCourtesy)
         {
-            this.customerDate = customerDate;
-            this.totalPurchases = totalPurchases;
+            CustomerDate = customerDate;
+            TotalPurchases = totalPurchases;
         }
         #endregion
 
         #region Fields
         protected DateTime customerDate;
-        protected int totalPurchases;
+        protected decimal totalPurchases;
         #endregion
 
         #region Constructors
@@ -35,7 +35,7 @@
             }
         }
 
-        public int TotalPurchases
+        public decimal TotalPurchases
         {
             get => totalPurchases;
             set

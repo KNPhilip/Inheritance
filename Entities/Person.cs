@@ -11,13 +11,13 @@ namespace Entities
         #region Constructors
         public Person(DateTime birthDate, string titleOfCourtesy)
         {
-            this.birthDate = birthDate;
-            this.titleOfCourtesy = titleOfCourtesy;
+            BirthDate = birthDate;
+            TitleOfCourtesy = titleOfCourtesy;
         }
         #endregion
 
         #region Fields
-        protected DateTime birthDate;
+        private DateTime birthDate;
         private string titleOfCourtesy; 
         #endregion
 

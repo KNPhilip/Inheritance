@@ -30,7 +30,7 @@ namespace Tests
             string incorrectTitleOfCourtesy;
 
             // Act:
-            incorrectBirthDate = new (1500, 01, 01);
+            incorrectBirthDate = new(1500, 01, 01);
             incorrectTitleOfCourtesy = null;
             call = () => new Person(incorrectBirthDate, incorrectTitleOfCourtesy);
 
@@ -55,7 +55,7 @@ namespace Tests
 
 
             // Assert:
-            Assert.Throws<ArgumentNullException>(call);
+            Assert.Throws<ArgumentOutOfRangeException>(call);
         }
         #endregion
 
@@ -92,21 +92,17 @@ namespace Tests
             DateTime incorrectBirthDate;
             DateTime incorrectCustomerDate;
             int incorrectTotalPurchases;
-            Person p;
-            Customer c;
-
 
             // Act:
             incorrectBirthDate = new(1500, 01, 01);
             incorrectCustomerDate = new(1500, 01, 01);
             incorrectTitleOfCourtesy = null;
             incorrectTotalPurchases = -1;
-            p = new(incorrectBirthDate, incorrectTitleOfCourtesy);
-            call = () => new Customer(p, incorrectCustomerDate, incorrectTotalPurchases);
+            call = () => new Customer(incorrectBirthDate, incorrectTitleOfCourtesy, incorrectCustomerDate, incorrectTotalPurchases);
 
 
             // Assert:
-            Assert.Throws<ArgumentNullException>(call);
+            Assert.Throws<ArgumentOutOfRangeException>(call);
         }
 
         [Fact]
@@ -114,7 +110,6 @@ namespace Tests
         {
             // Arrange:
             Func<Customer> call;
-            Person p;
             DateTime incorrectDate;
             DateTime incorrectCustomerDate;
             int incorrectTotalPurchases;
@@ -125,8 +120,7 @@ namespace Tests
             incorrectDate = new(1500, 01, 01);
             incorrectCustomerDate = new(1500, 01, 01);
             incorrectTitleOfCourtesy = null;
-            p = new(incorrectDate, incorrectTitleOfCourtesy);
-            call = () => new Customer(p, incorrectCustomerDate, incorrectTotalPurchases);
+            call = () => new Customer(incorrectDate, incorrectTitleOfCourtesy, incorrectCustomerDate, incorrectTotalPurchases);
 
             // Assert:
             Assert.Throws<ArgumentOutOfRangeException>(call);
@@ -141,15 +135,13 @@ namespace Tests
             string correctJobTitle;
             DateTime correctEmploymentDate;
             decimal correctYearlySalary;
-            Person p;
             Employee e;
 
             // Act:
             correctEmploymentDate = DateTime.Now;
             correctJobTitle = "Salesman";
             correctYearlySalary = 300000.00m;
-            p = new(DateTime.Now, "Title of Courtesy");
-            e = new(p, correctJobTitle, correctEmploymentDate, correctYearlySalary);
+            e = new(DateTime.Now, "Title of Courtesy", correctJobTitle, correctEmploymentDate, correctYearlySalary);
 
 
             // Assert:
@@ -170,7 +162,6 @@ namespace Tests
             DateTime incorrectEmploymentDate;
             decimal incorrectYearlySalary;
             string incorrectJobTitle;
-            Person p;
             Employee e;
 
 
@@ -180,12 +171,11 @@ namespace Tests
             incorrectTitleOfCourtesy = null;
             incorrectYearlySalary = -1;
             incorrectJobTitle = null;
-            p = new(incorrectBirthDate, incorrectTitleOfCourtesy);
-            call = () => new Employee(p, incorrectJobTitle, incorrectEmploymentDate, incorrectYearlySalary);
+            call = () => new Employee(incorrectBirthDate, incorrectTitleOfCourtesy, incorrectJobTitle, incorrectEmploymentDate, incorrectYearlySalary);
 
 
             // Assert:
-            Assert.Throws<ArgumentNullException>(call);
+            Assert.Throws<ArgumentOutOfRangeException>(call);
         }
 
         [Fact]
@@ -193,7 +183,6 @@ namespace Tests
         {
             // Arrange:
             Func<Employee> call;
-            Person p;
             string incorrectTitleOfCourtesy;
             DateTime incorrectBirthDate;
             DateTime incorrectEmploymentDate;
@@ -206,11 +195,10 @@ namespace Tests
             incorrectEmploymentDate = new(1500, 01, 01);
             incorrectBirthDate = new(1500, 01, 01);
             incorrectTitleOfCourtesy = null;
-            p = new(incorrectBirthDate, incorrectTitleOfCourtesy);
-            call = () => new Employee(p, incorrectJobTitle, incorrectEmploymentDate, incorrectYearlySalary);
+            call = () => new Employee(incorrectBirthDate, incorrectTitleOfCourtesy, incorrectJobTitle, incorrectEmploymentDate, incorrectYearlySalary);
 
             // Assert:
-            Assert.Throws<ArgumentNullException>(call);
+            Assert.Throws<ArgumentOutOfRangeException>(call);
         }
         #endregion
     }

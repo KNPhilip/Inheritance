@@ -11,16 +11,16 @@ namespace Entities
         #region Constructors
         public Employee(DateTime birthDate, string titleOfCourtesy, string jobTitle, DateTime employmentDate, decimal yearlySalary) : base(birthDate, titleOfCourtesy)
         {
-            this.jobTitle = jobTitle;
-            this.employmentDate = employmentDate;
-            this.yearlySalary = yearlySalary;
+            JobTitle = jobTitle;
+            EmploymentDate = employmentDate;
+            YearlySalary = yearlySalary;
         }
 
         public Employee(Person person, string jobTitle, DateTime employmentDate, decimal yearlySalary) : base(person.BirthDate, person.TitleOfCourtesy)
         {
-            this.jobTitle = jobTitle;
-            this.employmentDate = employmentDate;
-            this.yearlySalary = yearlySalary;
+            JobTitle = jobTitle;
+            EmploymentDate = employmentDate;
+            YearlySalary = yearlySalary;
         }
         #endregion
 

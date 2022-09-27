@@ -11,12 +11,12 @@ namespace Entities
         #region Constructors
         public Product(string name, DateTime creationDate, decimal price, int numberOfSales) : base(name, creationDate, price)
         {
-            this.numberOfSales = numberOfSales;
+            NumberOfSales = numberOfSales;
         }
 
         public Product(SaleUnit saleUnit, int numberOfSales) : base(saleUnit.Name, saleUnit.CreationDate, saleUnit.Price)
         {
-            this.numberOfSales = numberOfSales;
+            NumberOfSales = numberOfSales;
         }
         #endregion
 

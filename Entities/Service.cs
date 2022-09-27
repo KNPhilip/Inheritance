@@ -11,12 +11,12 @@ namespace Entities
         #region Constructors
         public Service(string name, DateTime creationDate, decimal price, string description) : base(name, creationDate, price)
         {
-            this.description = description;
+            Description = description;
         }
 
         public Service(SaleUnit saleUnit, string description) : base(saleUnit.Name, saleUnit.CreationDate, saleUnit.Price)
         {
-            this.description = description;
+            Description = description;
         }
         #endregion
 

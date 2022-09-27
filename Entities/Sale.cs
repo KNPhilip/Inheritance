@@ -11,10 +11,10 @@ namespace Entities
         #region Constructors
         public Sale(Seller seller, Customer customer, DateTime dateOfSale, List<SaleUnit> saleUnits)
         {
-            this.seller = seller;
-            this.customer = customer;
-            this.dateOfSale = dateOfSale;
-            this.saleUnits = saleUnits;
+            Seller = seller;
+            Customer = customer;
+            DateOfSale = dateOfSale;
+            SaleUnits = saleUnits;
         }
         #endregion
 

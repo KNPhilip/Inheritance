@@ -11,9 +11,9 @@ namespace Entities
         #region Constructors
         public SaleUnit(string name, DateTime creationDate, Decimal price)
         {
-            this.name = name;
-            this.creationDate = creationDate;
-            this.price = price;
+            Name = name;
+            CreationDate = creationDate;
+            Price = price;
         }
         #endregion
 
