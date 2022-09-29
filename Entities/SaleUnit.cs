@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class SaleUnit
+    public abstract class SaleUnit
     {
         #region Constructors
         public SaleUnit(string name, DateTime creationDate, Decimal price)
@@ -20,7 +20,7 @@ namespace Entities
         #region Fields
         protected string name;
         protected DateTime creationDate;
-        protected Decimal price; 
+        protected decimal price;
         #endregion
 
         #region Properties
@@ -42,7 +42,7 @@ namespace Entities
             get => creationDate;
             set
             {
-                if (creationDate.Year < 1900)
+                if (value.Year < 1900)
                 {
                     throw new ArgumentOutOfRangeException("Oprettelsesdatoen skal være efter 1900-tallet");
                 }

@@ -9,13 +9,7 @@ namespace Entities
     public class Seller : Employee
     {
         #region Constructors
-        public Seller(DateTime birthDate, string titleOfCourtesy, string jobTitle, DateTime employmentDate, decimal yearlySalary, string description, decimal yearlySold) : base(birthDate, titleOfCourtesy, jobTitle, employmentDate, yearlySalary)
-        {
-            Description = description;
-            YearlySold = yearlySold;
-        }
-
-        public Seller(Employee employee, string description, decimal yearlySold) : base(employee.BirthDate, employee.TitleOfCourtesy, employee.JobTitle, employee.EmploymentDate, employee.YearlySalary)
+        public Seller(DateTime birthDate, string titleOfCourtesy, string jobTitle, DateTime employmentDate, int thisYearsSales, decimal yearlySalary, string description, decimal yearlySold) : base(birthDate, titleOfCourtesy, jobTitle, employmentDate, thisYearsSales, yearlySalary)
         {
             Description = description;
             YearlySold = yearlySold;
@@ -56,6 +50,31 @@ namespace Entities
         #endregion
 
         #region Methods
+        public override string GetRating()
+        {
+            if (ThisYearsSales >= 1000)
+            {
+                return $"Denne sælger er en uovertruffen sælger";
+            }
+            else if (ThisYearsSales >= 500)
+            {
+                return "Denne sælger er en fantastisk sælger";
+            }
+            else if (ThisYearsSales >= 250)
+            {
+                return "Denne sælger er en dygtig sælger";
+            }
+            else if (ThisYearsSales >= 100)
+            {
+                return "Denne sælger er en god sælger";
+            }
+            else
+            {
+                return "Denne sælger er en udmærket sælger";
+            }
+
+        }
+
         public decimal GetPercentageSoldOfSalary()
         {
             return yearlySalary / yearlySold;

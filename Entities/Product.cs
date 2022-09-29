@@ -13,11 +13,6 @@ namespace Entities
         {
             NumberOfSales = numberOfSales;
         }
-
-        public Product(SaleUnit saleUnit, int numberOfSales) : base(saleUnit.Name, saleUnit.CreationDate, saleUnit.Price)
-        {
-            NumberOfSales = numberOfSales;
-        }
         #endregion
 
         #region Fields

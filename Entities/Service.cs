@@ -13,11 +13,6 @@ namespace Entities
         {
             Description = description;
         }
-
-        public Service(SaleUnit saleUnit, string description) : base(saleUnit.Name, saleUnit.CreationDate, saleUnit.Price)
-        {
-            Description = description;
-        }
         #endregion
 
         #region Fields

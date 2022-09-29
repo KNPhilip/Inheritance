@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Person
+    public abstract class Person
     {
         #region Constructors
         public Person(DateTime birthDate, string titleOfCourtesy)
@@ -46,7 +46,11 @@ namespace Entities
                 }
                 titleOfCourtesy = value;
             }
-        } 
+        }
+        #endregion
+
+        #region Methods
+        public abstract string GetRating();
         #endregion
     }
 }

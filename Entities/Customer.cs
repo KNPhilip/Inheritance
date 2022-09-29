@@ -46,7 +46,34 @@
                 }
                 totalPurchases = value;
             }
-        } 
+        }
+        #endregion
+
+        #region Methods
+        public override string GetRating()
+        {
+            if (TotalPurchases >= 1000)
+            {
+                return "*****";
+            }
+            else if (TotalPurchases >= 500)
+            {
+                return "****";
+            }
+            else if (TotalPurchases >= 250)
+            {
+                return "***";
+            }
+            else if (TotalPurchases >= 100)
+            {
+                return "**";
+            }
+            else
+            {
+                return "*";
+            }
+
+        }
         #endregion
     }
 }

@@ -31,7 +31,7 @@ namespace Entities
             get => seller;
             set
             {
-                if (seller == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("Sælgeren kan ikke være null");
                 }
@@ -44,7 +44,7 @@ namespace Entities
             get => customer;
             set
             {
-                if (customer == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("Kunden kan ikke være null");
                 }
@@ -70,7 +70,7 @@ namespace Entities
             get => saleUnits;
             set
             {
-                if (saleUnits == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("Salgsenheder kan ikke være null");
                 }

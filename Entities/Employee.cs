@@ -6,20 +6,14 @@ using System.Threading.Tasks;
 
 namespace Entities
 {
-    public class Employee : Person
+    public abstract class Employee : Person
     {
         #region Constructors
-        public Employee(DateTime birthDate, string titleOfCourtesy, string jobTitle, DateTime employmentDate, decimal yearlySalary) : base(birthDate, titleOfCourtesy)
+        public Employee(DateTime birthDate, string titleOfCourtesy, string jobTitle, DateTime employmentDate, int thisYearsSales, decimal yearlySalary) : base(birthDate, titleOfCourtesy)
         {
             JobTitle = jobTitle;
             EmploymentDate = employmentDate;
-            YearlySalary = yearlySalary;
-        }
-
-        public Employee(Person person, string jobTitle, DateTime employmentDate, decimal yearlySalary) : base(person.BirthDate, person.TitleOfCourtesy)
-        {
-            JobTitle = jobTitle;
-            EmploymentDate = employmentDate;
+            ThisYearsSales = thisYearsSales;
             YearlySalary = yearlySalary;
         }
         #endregion
@@ -27,6 +21,7 @@ namespace Entities
         #region Fields
         protected string jobTitle;
         protected DateTime employmentDate;
+        protected int thisYearsSales;
         protected decimal yearlySalary; 
         #endregion
 
@@ -57,18 +52,31 @@ namespace Entities
             }
         }
 
+        public decimal ThisYearsSales
+        {
+            get => thisYearsSales;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentOutOfRangeException("Nuværende årssalg kan ikke være i minus");
+                }
+                yearlySalary = value;
+            }
+        }
+
         public decimal YearlySalary
         {
             get => yearlySalary;
             set
             {
-                if (YearlySalary < 0)
+                if (value < 0)
                 {
                     throw new ArgumentOutOfRangeException("Årsløn kan ikke være i minus");
                 }
                 yearlySalary = value;
             }
-        } 
+        }
         #endregion
     }
 }
